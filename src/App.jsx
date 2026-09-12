@@ -1,23 +1,27 @@
 import React from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
-import Layout from "./components/Layout.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
-import Clients from "./pages/Clients.jsx";
-import ClientDetail from "./pages/ClientDetail.jsx";
-import Invoices from "./pages/Invoices.jsx";
-import Settings from "./pages/Settings.jsx";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import Unicorn from "./pages/Unicorn.jsx";
+import Species from "./pages/Species.jsx";
+import Realms from "./pages/Realms.jsx";
+import Magic from "./pages/Magic.jsx";
+import Legends from "./pages/Legends.jsx";
+import Journal from "./pages/Journal.jsx";
+import FieldNotes from "./pages/FieldNotes.jsx";
+import About from "./pages/About.jsx";
 
 export default function App() {
   return (
     <Routes>
-      <Route element={<Layout />}>
-        <Route index element={<Dashboard />} />
-        <Route path="clients" element={<Clients />} />
-        <Route path="clients/:clientId" element={<ClientDetail />} />
-        <Route path="invoices" element={<Invoices />} />
-        <Route path="settings" element={<Settings />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Route>
+      <Route path="/" element={<Home />} />
+      <Route path="/unicorn" element={<Unicorn />} />
+      <Route path="/species" element={<Species />} />
+      <Route path="/realms" element={<Realms />} />
+      <Route path="/magic" element={<Magic />} />
+      <Route path="/legends" element={<Legends />} />
+      <Route path="/journal" element={<Journal />} />
+      <Route path="/field-notes" element={<FieldNotes />} />
+      <Route path="/about" element={<About />} />
     </Routes>
   );
 }
